@@ -1,0 +1,52 @@
+//1
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+console.log(reverseString("Hello"));
+
+//2
+function filterNum(num) {
+  return num.filter((num) => num > 5);
+}
+
+const num = [1, 2, 3, 4, 5, 6];
+console.log(filterNum(num)); 
+
+//3
+function user(firstName, lastName) {
+  return `${firstName || ''}${lastName ? ' ' + lastName : ''}`;
+}
+console.log(user('aaa', 'bb'))
+
+//原始程式碼事先宣告formattedName，如果firstName跟lastName為true就加到formattedName裡，
+  這裡改成在return做判斷
+
+//4
+function ConditionalRendering({ isLoggedIn }) {
+  isLoggedIn ? console.log(1) : console.log(2);
+}
+ConditionalRendering({ isLoggedIn: true });
+
+//5
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const addCount = () => {
+    setCount(count + 1);
+  };
+
+  const decCount = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <h1>Counter: {count}</h1>
+      <button onClick={addCount}>增加</button>
+      <button onClick={decCount}>減少</button>
+    </div>
+  );
+};
+
+export default Counter;
